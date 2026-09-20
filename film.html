@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protocols with Code-as-Policy — a physical coordination episode</title>
+  <link rel="stylesheet" href="static/film.css">
+</head>
+<body>
+  <main id="film">
+    <section id="card">
+      <p id="card-label"></p>
+      <div id="card-content">
+        <div id="card-copy">
+          <h1 id="card-title"></h1>
+          <p id="card-body"></p>
+          <p id="card-footer"></p>
+        </div>
+        <img id="solution-figure" src="static/images/paper/protocol.png" alt="Three steps of protocol formation" hidden>
+      </div>
+    </section>
+    <section id="episode-stage" hidden>
+      <section id="explanation"><h2 id="headline"></h2></section>
+      <div id="playback-info"><strong id="transport-label"></strong><span id="episode-time"></span></div>
+      <aside id="agent-0" class="agent-column" style="--agent-color:#1f77b4" data-agent="agent_0">
+        <h3 class="agent-heading">Robot 1</h3>
+        <section class="robot-status"><h4>Robot status</h4><div id="robot-0" class="robot"></div></section>
+        <section id="messages-panel-0" class="messages-panel"><h4>Language messages</h4><div id="message-stream-0" class="message-stream"></div></section>
+        <section id="events-panel-0" class="events-panel"><h4>Code &amp; deployments</h4><div id="event-stream-0" class="event-stream activity-stream"></div></section>
+        <section id="protocol-panel-0" class="protocol-panel"><h4>Policy messages</h4><div id="protocol-stream-0"></div></section>
+      </aside>
+      <aside id="agent-1" class="agent-column" style="--agent-color:#ff7f0e" data-agent="agent_1">
+        <h3 class="agent-heading">Robot 2</h3>
+        <section class="robot-status"><h4>Robot status</h4><div id="robot-1" class="robot"></div></section>
+        <section id="messages-panel-1" class="messages-panel"><h4>Language messages</h4><div id="message-stream-1" class="message-stream"></div></section>
+        <section id="events-panel-1" class="events-panel"><h4>Code &amp; deployments</h4><div id="event-stream-1" class="event-stream activity-stream"></div></section>
+        <section id="protocol-panel-1" class="protocol-panel"><h4>Policy messages</h4><div id="protocol-stream-1"></div></section>
+      </aside>
+      <figure id="camera-panel" class="pane">
+        <figcaption>Deployment View</figcaption>
+        <div id="camera-slot"><video id="camera" muted playsinline preload="auto"></video></div>
+      </figure>
+      <figure id="reconstruction" class="pane">
+        <figcaption>Rendered view</figcaption>
+        <svg id="scene" viewBox="0 0 420 680" role="img" aria-label="Camera-oriented reconstruction of the physical episode"></svg>
+        <p id="goal-counts"></p>
+      </figure>
+    </section>
+  </main>
+  <script type="module" src="static/film.js"></script>
+</body>
+</html>
