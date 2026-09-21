@@ -41,6 +41,8 @@ p { margin: 0 0 20px; }
 .film-frame video { display: block; width: 100%; background: #fafafa; }
 .paper-figure { margin: 22px 0 32px; }
 .paper-figure img { width: 100%; }
+.crossplay-figure { width: 60%; margin-left: auto; margin-right: auto; }
+@media (max-width: 600px) { .crossplay-figure { width: 100%; } }
 .task-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
 .task-grid img { width: 100%; }
 .task-grid figcaption { font-size: .94rem; line-height: 1.5; margin-top: 12px; }

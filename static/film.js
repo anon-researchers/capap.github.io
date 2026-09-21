@@ -45,7 +45,7 @@ function makeTimeline() {
 function eventStream(agent, t, focus, language = false) {
   const available = timeline.filter(e => e.agent === agent.id && e.t <= t && (e.category === 'language') === language);
   const entering = available.length && t - available.at(-1).t < .6;
-  const limit = language ? 2 : 3;
+  const limit = language ? 3 : 4;
   const events = available.slice(-(limit + (entering ? 1 : 0))).reverse();
   if (!events.length) return `<p class="empty">${language ? 'No language messages yet.' : 'No code or deployments yet.'}</p>`;
   return `<div class="event-list">` + events.map(e => `<div class="event ${focus.includes(e.category) ? 'highlight' : ''}" data-id="${e.id}" data-agent="${e.agent}" data-time="${e.t}" data-kind="${e.category}" style="--agent-color:${color(e.agent)}"><div class="event-meta">${clock(e.t)}</div><div class="event-body">${escape(e.body)}</div></div>`).join('') + '</div>';
@@ -66,8 +66,8 @@ function fitHeadline(text) {
   headline.textContent = text;
   let size = 60;
   headline.style.fontSize = `${size}px`;
-  // Keep author text intact and large, using up to two lines beside the clock.
-  while (headline.scrollHeight > 126 && size > 42) {
+  // Keep author text intact, fitting up to three lines below the central views.
+  while (headline.scrollHeight > 196 && size > 42) {
     headline.style.fontSize = `${--size}px`;
   }
 }
